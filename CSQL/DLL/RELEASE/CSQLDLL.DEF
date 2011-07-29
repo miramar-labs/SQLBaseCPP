@@ -1,0 +1,288 @@
+LIBRARY   	CSQLDLL
+DESCRIPTION	'_AFXDLL release version of SQLBase++'         
+EXETYPE   	WINDOWS                                                        
+
+;	Will trim this down one day, to remove all private or inline members...
+
+CODE      	LOADONCALL MOVEABLE DISCARDABLE
+DATA      	PRELOAD MOVEABLE SINGLE
+
+SEGMENTS
+	_TEXT   	PRELOAD MOVEABLE DISCARDABLE
+	WEP_TEXT 	PRELOAD MOVEABLE DISCARDABLE
+
+HEAPSIZE  1024
+EXPORTS
+	WEP @1 RESIDENTNAME PRIVATE ;; required WEP entry point (uses library WEP)
+	INITCSQLDLL 		@2 NONAME
+	CSQLSEEWHATHAPPENED	@3 NONAME 
+	
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlType
+??0CSqlType@@JEC@EW4obj_type@0@@Z	@100 NONAME
+??1CSqlType@@NEC@XZ	@101 NONAME
+??_7CSqlType@@6F@	@102 NONAME
+??_GCSqlType@@NECPEXI@Z	@103 NONAME
+?csqlObjType@CSqlType@@RFC?EW4obj_type@1@XZ	@104 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlNumber
+??0CSqlNumber@@REC@AFV0@@Z	@201 NONAME
+??0CSqlNumber@@REC@F@Z	@202 NONAME
+??0CSqlNumber@@REC@J@Z	@203 NONAME
+??0CSqlNumber@@REC@M@Z	@204 NONAME
+??0CSqlNumber@@REC@N@Z	@205 NONAME
+??1CSqlNumber@@VEC@XZ	@206 NONAME
+??4CSqlNumber@@RECAFV0@AFV0@@Z	@207 NONAME
+??BCSqlNumber@@RFCFXZ	@209 NONAME
+??BCSqlNumber@@RFCGXZ	@210 NONAME
+??BCSqlNumber@@RFCHXZ	@211 NONAME
+??BCSqlNumber@@RFCIXZ	@212 NONAME
+??BCSqlNumber@@RFCJXZ	@213 NONAME
+??BCSqlNumber@@RFCKXZ	@214 NONAME
+??BCSqlNumber@@RFCMXZ	@215 NONAME
+??BCSqlNumber@@RFCNXZ	@216 NONAME
+??_7CSqlNumber@@6F@	@217 NONAME
+??_GCSqlNumber@@VECPEXI@Z	@218 NONAME
+?dataBuffer@CSqlNumber@@FECPEEXZ	@219 NONAME
+?dataLength@CSqlNumber@@FECKXZ	@220 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlString
+??0CSqlString@@REC@AFV0@@Z	@300 NONAME
+??0CSqlString@@REC@PFD@Z	@301 NONAME
+??1CSqlString@@VEC@XZ	@302 NONAME
+??_7CSqlString@@6F@	@304 NONAME
+??_GCSqlString@@VECPEXI@Z	@305 NONAME
+?dataBuffer@CSqlString@@FECPEEXZ	@306 NONAME
+?dataLength@CSqlString@@FECKXZ	@307 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlDateTime
+??0CSqlDateTime@@REC@AFV0@@Z	@400 NONAME
+??0CSqlDateTime@@REC@AFVCTime@@@Z	@401 NONAME
+??0CSqlDateTime@@REC@HHH@Z	@402 NONAME
+??0CSqlDateTime@@REC@HHHHHHI@Z	@403 NONAME
+??0CSqlDateTime@@REC@HHHI@Z	@404 NONAME
+??0CSqlDateTime@@REC@XZ	@405 NONAME
+??1CSqlDateTime@@VEC@XZ	@407 NONAME
+??4CSqlDateTime@@RECAFV0@AFV0@@Z	@408 NONAME
+??_7CSqlDateTime@@6F@	@410 NONAME
+??_GCSqlDateTime@@VECPEXI@Z	@411 NONAME
+?asSqlTimeStr@CSqlDateTime@@RFC?EVCString@@XZ	@412 NONAME
+?csqlSubType@CSqlDateTime@@RFC?EW4sub_type@1@XZ	@413 NONAME
+?dataBuffer@CSqlDateTime@@FECPEEXZ	@414 NONAME
+?dataLength@CSqlDateTime@@FECKXZ	@415 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlLongVarChar
+??0CSqlLongVarChar@@REC@AEVCFile@@@Z	@500 NONAME
+??0CSqlLongVarChar@@REC@AFV0@@Z	@501 NONAME
+??0CSqlLongVarChar@@REC@PEEK@Z	@502 NONAME
+??0CSqlLongVarChar@@REC@XZ	@503 NONAME
+??1CSqlLongVarChar@@VEC@XZ	@504 NONAME
+??4CSqlLongVarChar@@RECAFV0@AFV0@@Z	@505 NONAME
+??_7CSqlLongVarChar@@6F@	@507 NONAME
+??_GCSqlLongVarChar@@VECPEXI@Z	@508 NONAME
+?bufferLength@CSqlLongVarChar@@RFCKXZ	@509 NONAME
+?bufferPointer@CSqlLongVarChar@@RECPEEXZ	@510 NONAME
+?dataBuffer@CSqlLongVarChar@@FECPEEXZ	@511 NONAME
+?dataLength@CSqlLongVarChar@@FECKXZ	@512 NONAME
+?toFile@CSqlLongVarChar@@RECXAEVCFile@@@Z	@515 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlInternalNumber
+??0CSqlInternalNumber@@REC@AFV0@@Z	@600 NONAME
+??0CSqlInternalNumber@@REC@AFVCSqlNumber@@@Z	@601 NONAME
+??0CSqlInternalNumber@@REC@XZ	@602 NONAME
+??1CSqlInternalNumber@@VEC@XZ	@603 NONAME
+??4CSqlInternalNumber@@RECAFV0@AFV0@@Z	@604 NONAME
+??D@ZA?EVCSqlInternalNumber@@AFV0@0@Z	@606 NONAME
+??G@ZA?EVCSqlInternalNumber@@AFV0@0@Z	@607 NONAME
+??H@ZA?EVCSqlInternalNumber@@AFV0@0@Z	@608 NONAME
+??K@ZA?EVCSqlInternalNumber@@AFV0@0@Z	@609 NONAME
+??_7CSqlInternalNumber@@6F@	@610 NONAME
+??_GCSqlInternalNumber@@VECPEXI@Z	@611 NONAME
+?asPictureStr@CSqlInternalNumber@@REC?EVCString@@PFD@Z	@612 NONAME
+?dataBuffer@CSqlInternalNumber@@FECPEEXZ	@613 NONAME
+?dataLength@CSqlInternalNumber@@FECKXZ	@614 NONAME
+?fromString@CSqlInternalNumber@@RECHPFD@Z	@615 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlInternalDate
+??0CSqlInternalDate@@REC@AFV0@@Z	@700 NONAME
+??0CSqlInternalDate@@REC@AFVCSqlDateTime@@@Z	@701 NONAME
+??0CSqlInternalDate@@REC@AFVCString@@0@Z	@702 NONAME
+??0CSqlInternalDate@@REC@XZ	@703 NONAME
+??1CSqlInternalDate@@VEC@XZ	@704 NONAME
+??4CSqlInternalDate@@RECAFV0@AFV0@@Z	@705 NONAME
+??H@ZA?EVCSqlInternalDate@@AFV0@H@Z	@707 NONAME
+??H@ZA?EVCSqlInternalDate@@HAFV0@@Z	@708 NONAME
+??YCSqlInternalDate@@RECAEV0@H@Z	@709 NONAME
+??_7CSqlInternalDate@@6F@	@710 NONAME
+??_GCSqlInternalDate@@VECPEXI@Z	@711 NONAME
+?asPictureStr@CSqlInternalDate@@REC?EVCString@@AFV2@@Z	@712 NONAME
+?dataBuffer@CSqlInternalDate@@FECPEEXZ	@713 NONAME
+?dataLength@CSqlInternalDate@@FECKXZ	@714 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlCommand
+??0CSqlCommand@@JEC@XZ	@800 NONAME
+??0CSqlCommand@@REC@AEVCSqlCursor@@I@Z	@801 NONAME
+??0CSqlCommand@@REC@AEVCSqlCursor@@PFD@Z	@802 NONAME
+??1CSqlCommand@@VEC@XZ	@803 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlDateTime@@@Z	@806 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlInternalDate@@@Z	@807 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlInternalNumber@@@Z	@808 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlLongVarChar@@@Z	@809 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlNumber@@@Z	@810 NONAME
+??6CSqlCommand@@RECAEV0@AFVCSqlString@@@Z	@811 NONAME
+??_7CSqlCommand@@6F@	@812 NONAME
+??_GCSqlCommand@@VECPEXI@Z	@813 NONAME
+?associateWith@CSqlCommand@@VECXAEVCSqlCursor@@@Z	@814 NONAME
+?associateWith@CSqlCommand@@VECXI@Z	@815 NONAME
+?associateWith@CSqlCommand@@VECXPFD@Z	@816 NONAME
+?bind@CSqlCommand@@VECHXZ	@817 NONAME
+?bindWithNull@CSqlCommand@@RECHHH@Z	@818 NONAME
+?cleanUp@CSqlCommand@@JECXXZ	@819 NONAME
+?compile@CSqlCommand@@RECHXZ	@820 NONAME
+?compileAndExecute@CSqlCommand@@VECHXZ	@821 NONAME
+?deleteAllBinds@CSqlCommand@@RECXXZ	@822 NONAME
+?execute@CSqlCommand@@VECHXZ	@823 NONAME
+?getCmdString@CSqlCommand@@RFC?EVCString@@XZ	@824 NONAME
+?getCursor@CSqlCommand@@RFCPEVCSqlCursor@@XZ	@825 NONAME
+?lvcMaxBlockRead@CSqlCommand@@2KF	@826 NONAME
+?lvcMaxBlockWrite@CSqlCommand@@2KF	@827 NONAME
+?numBinds@CSqlCommand@@RFCHXZ	@828 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlDateTime@@@Z	@829 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlInternalDate@@@Z	@830 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlInternalNumber@@@Z	@831 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlLongVarChar@@@Z	@832 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlNumber@@@Z	@833 NONAME
+?replaceBind@CSqlCommand@@RECXHAFVCSqlString@@@Z	@834 NONAME
+?writeAnyLongVarChars@CSqlCommand@@JECXXZ	@835 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlSelect
+??0CSqlSelect@@REC@AEVCSqlCursor@@I@Z	@900 NONAME
+??0CSqlSelect@@REC@AEVCSqlCursor@@PFD@Z	@901 NONAME
+??1CSqlSelect@@VEC@XZ	@902 NONAME
+??5CSqlSelect@@RECXAEVCSqlCommand@@@Z	@903 NONAME
+??5CSqlSelect@@RECXPEVCSqlCommand@@@Z	@904 NONAME
+??_7CSqlSelect@@6F@	@905 NONAME
+??_GCSqlSelect@@VECPEXI@Z	@906 NONAME
+?associateWith@CSqlSelect@@VECXAEVCSqlCursor@@@Z	@907 NONAME
+?associateWith@CSqlSelect@@VECXI@Z	@908 NONAME
+?associateWith@CSqlSelect@@VECXPFD@Z	@909 NONAME
+?bind@CSqlSelect@@VECHXZ	@910 NONAME
+?cleanUp@CSqlSelect@@JECXXZ	@911 NONAME
+?compileAndExecute@CSqlSelect@@VECHXZ	@912 NONAME
+?describeColumn@CSqlSelect@@RECXE@Z	@913 NONAME
+?emptySelectBuffers@CSqlSelect@@JECXXZ	@914 NONAME
+?execute@CSqlSelect@@VECHXZ	@915 NONAME
+?fetchAnyLongVarChars@CSqlSelect@@JECXXZ	@916 NONAME
+?fetchRow@CSqlSelect@@REC?EW4fetchCode@1@AEPEVCSqlRow@@@Z	@917 NONAME
+?fullColumnName@CSqlSelect@@REC?EVCString@@E@Z	@918 NONAME
+?getColumnLabel@CSqlSelect@@REC?EVCString@@E@Z	@919 NONAME
+?getFetchItemLen@CSqlSelect@@JECEE@Z	@920 NONAME
+?getFetchItemStatus@CSqlSelect@@JECEE@Z	@921 NONAME
+?numRowsAffected@CSqlSelect@@RECJXZ	@922 NONAME
+?numSelectItems@CSqlSelect@@RECEXZ	@923 NONAME
+?setSelectBuffers@CSqlSelect@@JECXXZ	@924 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlCursor
+??0CSqlCursor@@JEC@XZ	@1004 NONAME
+??0CSqlCursor@@REC@AFV0@@Z	@1005 NONAME
+??0CSqlCursor@@REC@PFD@Z	@1006 NONAME
+??1CSqlCursor@@VEC@XZ	@1009 NONAME
+??4CSqlCursor@@RECAFV0@AFV0@@Z	@1010 NONAME
+??BCSqlCursor@@RFCGXZ	@1011 NONAME
+??_7CSqlCursor@@6F@	@1012 NONAME
+??_GCSqlCursor@@VECPEXI@Z	@1013 NONAME
+?connect@CSqlCursor@@RECXXZ	@1016 NONAME
+?connectWithNoRecovery@CSqlCursor@@RECXXZ	@1017 NONAME
+?disconnect@CSqlCursor@@RECHH@Z	@1018 NONAME
+?getCmdType@CSqlCursor@@RECEXZ	@1019 NONAME
+?getDbParamString@CSqlCursor@@REC?EVCString@@G@Z	@1021 NONAME
+?getDbParamValue@CSqlCursor@@RECKG@Z	@1022 NONAME
+?getExecutionPlan@CSqlCursor@@RECXAEVCString@@H@Z	@1023 NONAME
+?getNumSQLBaseRows@CSqlCursor@@RECJPFD@Z	@1024 NONAME
+?isConnected@CSqlCursor@@RFCHXZ	@1025 NONAME
+?setCursorName@CSqlCursor@@RECXPFD@Z	@1026 NONAME
+?setDbParamString@CSqlCursor@@RECXGPFD@Z	@1027 NONAME
+?setDbParamValue@CSqlCursor@@RECXGK@Z	@1028 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlServer
+??0CSqlServer@@REC@PFD@Z	@1100 NONAME
+??1CSqlServer@@VEC@XZ	@1101 NONAME
+??_7CSqlServer@@6F@	@1102 NONAME
+??_GCSqlServer@@VECPEXI@Z	@1103 NONAME
+?abortProcess@CSqlServer@@RECXG@Z	@1104 NONAME
+?backupDatabase@CSqlServer@@RECXPFD0HH@Z	@1105 NONAME
+?backupLogFiles@CSqlServer@@RECXPFD0HH@Z	@1106 NONAME
+?backupSnapShot@CSqlServer@@RECXPFD0HH@Z	@1107 NONAME
+?connect@CSqlServer@@RECXPFD@Z	@1108 NONAME
+?createDatabase@CSqlServer@@RECXPFD@Z	@1109 NONAME
+?databaseNames@CSqlServer@@RECHAEVCStringArray@@PFD@Z	@1110 NONAME
+?dirOfDatabases@CSqlServer@@RECHAEVCStringArray@@G@Z	@1111 NONAME
+?disconnect@CSqlServer@@RECXXZ	@1112 NONAME
+?getNextLog@CSqlServer@@RECJPFD@Z	@1113 NONAME
+?getServerInfo@CSqlServer@@RECXFAEVCString@@@Z	@1114 NONAME
+?readDirFileNames@CSqlServer@@RECHAEVCStringArray@@@Z	@1115 NONAME
+?remoteOpenSrvrFile@CSqlServer@@RECKPFDF@Z	@1116 NONAME
+?remoteReadSrvrFile@CSqlServer@@RECGKPEDG@Z	@1117 NONAME
+?remoteSeekSrvrFile@CSqlServer@@RECJKJF@Z	@1118 NONAME
+?remoteWriteSrvrFile@CSqlServer@@RECGKPEDG@Z	@1119 NONAME
+?restoreDatabase@CSqlServer@@RECXPFD0HH@Z	@1120 NONAME
+?restoreLogFiles@CSqlServer@@RECXPFD0HH@Z	@1121 NONAME
+?restoreSnapShot@CSqlServer@@RECXPFD0HH@Z	@1122 NONAME
+?rollForward@CSqlServer@@RECXPFDG0@Z	@1123 NONAME
+?terminate@CSqlServer@@RECXXZ	@1124 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlRow
+??0CSqlRow@@REC@XZ	@1200 NONAME
+??1CSqlRow@@VEC@XZ	@1201 NONAME
+??_7CSqlRow@@6F@	@1202 NONAME
+??_GCSqlRow@@VECPEXI@Z	@1203 NONAME
+?dateTimeColumn@CSqlRow@@RFCPEVCSqlDateTime@@H@Z	@1204 NONAME
+?getColumn@CSqlRow@@RFCPEVCSqlType@@H@Z	@1206 NONAME
+?internalDateColumn@CSqlRow@@RFC?EVCSqlInternalDate@@H@Z	@1207 NONAME
+?internalNumericColumn@CSqlRow@@RFC?EVCSqlInternalNumber@@H@Z	@1208 NONAME
+?longVarCharColumn@CSqlRow@@RFCPEVCSqlLongVarChar@@H@Z	@1209 NONAME
+?numericColumn@CSqlRow@@RFCAEVCSqlNumber@@H@Z	@1210 NONAME
+?stringColumn@CSqlRow@@RFCAEVCSqlString@@H@Z	@1211 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlException
+??0CSqlException@@JEC@XZ	@1300 NONAME
+??0CSqlException@@REC@F@Z	@1301 NONAME
+??1CSqlException@@VEC@XZ	@1302 NONAME
+??_7CSqlException@@6F@	@1303 NONAME
+??_GCSqlException@@VECPEXI@Z	@1304 NONAME
+?classCSqlException@CSqlException@@2UCRuntimeClass@@E	@1305 NONAME
+?errorMessage@CSqlException@@RFC?EVCString@@XZ	@1307 NONAME
+?errorReason@CSqlException@@RFC?EVCString@@XZ	@1308 NONAME
+?errorRemedy@CSqlException@@RFC?EVCString@@XZ	@1309 NONAME
+?fullErrorMessage@CSqlException@@RFC?EVCString@@XZ	@1310 NONAME
+?GetRuntimeClass@CSqlException@@VFCPEUCRuntimeClass@@XZ	@1311 NONAME
+;******** end of scan
+;******** scanning file C:\CSQL\EXAMPLES\CSQLEX\CSQLEX.MAP 
+;******** class CSqlCsrException
+??0CSqlCsrException@@REC@AFVCSqlCursor@@0@Z	@1400 NONAME
+??0CSqlCsrException@@REC@AFVCSqlCursor@@@Z	@1401 NONAME
+??1CSqlCsrException@@VEC@XZ	@1402 NONAME
+??_7CSqlCsrException@@6F@	@1403 NONAME
+??_GCSqlCsrException@@VECPEXI@Z	@1404 NONAME
+?classCSqlCsrException@CSqlCsrException@@2UCRuntimeClass@@E	@1405 NONAME
+?enumBulkExecErrors@CSqlCsrException@@RECHG@Z	@1406 NONAME
+?enumNonSQLBaseBulkExecErrors@CSqlCsrException@@RECHG@Z	@1407 NONAME
+?errorPosition@CSqlCsrException@@RFCGXZ	@1408 NONAME
+?externalError@CSqlCsrException@@RFCJAEVCString@@@Z	@1409 NONAME
+?GetRuntimeClass@CSqlCsrException@@VFCPEUCRuntimeClass@@XZ	@1410 NONAME
+?rollbackFlag@CSqlCsrException@@RFCEXZ	@1411 NONAME
+?toggleCursors@CSqlCsrException@@RECHXZ	@1412 NONAME
+?translateErrorCode@CSqlCsrException@@RFCFXZ	@1413 NONAME
+;******** end of scan
