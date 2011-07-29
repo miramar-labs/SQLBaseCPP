@@ -1,0 +1,1 @@
+This is an old project of mine from around 1994/95 .. a C++ wrapper around a relational database (Gupta SQLBase). At the time it was written, the Microsoft C++ compiler didn't even have native support for C++ exceptions! That's how old this is... but it still compiles  :-)
